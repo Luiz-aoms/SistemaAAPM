@@ -1,0 +1,134 @@
+﻿@model DataTable
+@using System.Data
+
+@{
+    ViewData["Title"] = "Salas";
+    Layout = "../Shared/_LayoutADM.cshtml";
+}
+
+
+
+
+<div class="container-fluid">
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <h2 style="margin-left: 240px" class="title text-center">CONTROLE DE SALAS</h2>
+
+
+    @if (TempData["MsgSucesso"] != null)
+    {
+        <div class="alert alert-success" style="margin-left: 320px" role="alert">
+            @TempData["MsgSucesso"] &emsp;
+
+            <button type="button"
+                    class="fechar-alert btn btn-success btn-sm"
+                    arial-label="Close">
+                X
+            </button>
+        </div>
+    }
+
+
+    @if (TempData["MsgErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["MsgErro"] &emsp;
+
+            <button type="button"
+                    class="fechar-alert btn btn-danger btn-sm"
+                    arial-label="Close">
+                X
+            </button>
+        </div>
+    }
+
+    <br />
+
+
+
+</div>
+
+<br />
+<br />
+<br />
+
+
+
+
+
+
+
+
+<div class="ins-btn">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a class="btn btn-primary" role="button" asp-controller="Sala"
+                   asp-action="InserirExibir"><i class="bi bi-plus"></i> Adicionar</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<br />
+<br />
+<br />
+
+
+
+<div class="fade-in" id="meuElemento">
+
+    <div class="row">
+        <div class="col-md-12 d-flex flex-column">
+
+            <table id="table" class="table table-striped teble-houver table-bordered ">
+                <thead class="border-3 border-dark rounded-top table-dark">
+                    <tr>
+                        <th scope="col">Número Sala</th>
+                        <th scope="col">Bloco Sala</th>
+                        <th scope="col">Editar  &emsp; - &emsp;  Excluir</th>
+                    </tr>
+                </thead>
+                <tbody class="border-3 border-dark rounded-bottom">
+                    @if (Model != null)
+                    {
+                        @foreach (DataRow row in Model.Rows)
+                        {
+                            <tr>
+                                <td>@row["nmr_sala"]</td>
+                                <td>@row["bloco_sala"]</td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a role="button " class="btn btn-primary"
+                                           asp-controller="Sala"
+                                           asp-action="AlterarExibir"
+                                           asp-route-idSala="@row["Id_Sala"]"><i class="bi bi-pencil"></i></a>
+
+                                        &emsp;
+                                        &emsp;
+                                        &emsp;
+
+                                        <a role="button " class="btn btn-danger"
+                                           asp-controller="Sala"
+                                           asp-action="ExcluirExibir"
+                                           asp-route-idSala="@row["Id_Sala"]"><i class="bi bi-trash-fill"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div />

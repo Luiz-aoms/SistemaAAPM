@@ -1,0 +1,149 @@
+﻿@model DataTable
+@using System.Data
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carrossel carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 imagem-carroussel" src="~/images/Sócios AAPM (1).png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 imagem-carroussel" src="~/images/Sócios AAPM (1).png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 imagem-carroussel" src="~/images/Sócios AAPM (1).png" alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+    </div>
+
+    <div id="sobre-nos" style="max-width: 900px; margin: 40px auto; font-family: 'Arial', sans-serif;">
+
+        <div style="max-width: 900px; margin: 40px auto; font-family: 'Arial', sans-serif;">
+
+            <!-- Importando fonte Poppins do Google Fonts -->
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+            <div style="max-width: 900px; margin: 40px auto; font-family: 'Poppins', sans-serif;">
+
+                <!-- Seção Sobre Nós -->
+                <div style="background-color: #F0F0FF; border-radius: 12px; padding: 40px 30px; margin-bottom: 50px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <h2 style="text-align: center; color: #2e07eb; margin-bottom: 25px; font-weight: 600;">Sobre Nós</h2>
+                    <p style="font-size: 16px; line-height: 1.8; color: #1a1a1a; text-align: justify;">
+                        A <strong>AAPM (Associação Alunos, Ex-Alunos, Pais e Mestres)</strong> nasceu com o objetivo de fortalecer a comunidade estudantil,
+                        promovendo integração, aprendizado, eventos culturais, esportivos e profissionais. Desde sua fundação, buscamos criar um ambiente acolhedor,
+                        onde cada associado se sinta valorizado e motivado a participar ativamente da vida acadêmica e social.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #1a1a1a; text-align: justify;">
+                        Ao se tornar sócio da AAPM, você terá a oportunidade de fazer parte de uma rede de conexões, trocar experiências com colegas de
+                        diferentes cursos, participar de eventos exclusivos, workshops, palestras e competições internas como os Interclasses.
+                        Nosso compromisso é apoiar cada associado no desenvolvimento pessoal e acadêmico, oferecendo benefícios que facilitam a vida estudantil e proporcionam momentos de lazer e aprendizado.
+                    </p>
+                    <p style="font-size: 16px; line-height: 1.8; color: #1a1a1a; text-align: justify;">
+                        Além disso, valorizamos a inovação e a participação ativa. Nossos associados têm voz nas decisões, podem sugerir melhorias e
+                        propor atividades que beneficiem toda a comunidade. A AAPM é mais do que uma associação: é um espaço de crescimento, amizade e
+                        oportunidades únicas para todos que desejam fazer a diferença.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button style="background-color: #2e07eb; color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; transition: background-color 0.3s;"
+                                onmouseover="this.style.backgroundColor='#4a23f1';"
+                                onmouseout="this.style.backgroundColor='#2e07eb';">
+                            Saiba Mais e Torne-se Sócio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Seção Benefícios -->
+                <h2 style="text-align: center; color: #2e07eb; margin-bottom: 30px; font-weight: 600;">Benefícios de se Associar à AAPM</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+                    <!-- Card 1 -->
+                    <div id="beneficios" style="flex: 1 1 200px; background-color: #F4F4FF; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;"
+                         onmouseover="this.style.transform='translateY(-5px)';"
+                         onmouseout="this.style.transform='translateY(0)';">
+                        <div style="font-size: 40px; color: #2e07eb; margin-bottom: 10px;">🏆</div>
+                        <h3 style="color: #2e07eb; margin-bottom: 10px; font-weight: 600;">Participação nos Interclasses</h3>
+                        <p style="color: #1a1a1a;">Participe de competições internas, torneios e eventos esportivos exclusivos para associados.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div style="flex: 1 1 200px; background-color: #FFF8FF; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;"
+                         onmouseover="this.style.transform='translateY(-5px)';"
+                         onmouseout="this.style.transform='translateY(0)';">
+                        <div style="font-size: 40px; color: #7a39f7; margin-bottom: 10px;">📶</div>
+                        <h3 style="color: #7a39f7; margin-bottom: 10px; font-weight: 600;">WiFi no Refeitório</h3>
+                        <p style="color: #1a1a1a;">Internet rápida e gratuita disponível para estudo e lazer durante suas refeições.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div style="flex: 1 1 200px; background-color: #F6F6FF; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;"
+                         onmouseover="this.style.transform='translateY(-5px)';"
+                         onmouseout="this.style.transform='translateY(0)';">
+                        <div style="font-size: 40px; color: #4b07eb; margin-bottom: 10px;">👕</div>
+                        <h3 style="color: #4b07eb; margin-bottom: 10px; font-weight: 600;">5 Camisas do SENAI</h3>
+                        <p style="color: #1a1a1a;">Receba camisas exclusivas e mostre seu orgulho de fazer parte da AAPM.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div style="flex: 1 1 200px; background-color: #FFF8FF; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;"
+                         onmouseover="this.style.transform='translateY(-5px)';"
+                         onmouseout="this.style.transform='translateY(0)';">
+                        <div style="font-size: 40px; color: #6e0fff; margin-bottom: 10px;">🎁</div>
+                        <h3 style="color: #6e0fff; margin-bottom: 10px; font-weight: 600;">Outros Benefícios</h3>
+                        <p style="color: #1a1a1a;">Diversos outros benefícios exclusivos pensados para o crescimento e integração dos sócios.</p>
+                    </div>
+
+                </div>
+
+                <!-- Call-to-action -->
+                <p style="text-align: center; margin-top: 40px; font-weight: 600; font-size: 18px; color: #2e07eb;">
+                    Torne-se sócio agora e aproveite todos esses benefícios!
+                </p>
+            </div>
+        </div>
+    </div>
+    <section id="eventos" class="assoc-eventos" aria-labelledby="titulo-eventos">
+        <h2 id="titulo-eventos">Eventos da Associação</h2>
+
+        <div class="eventos-grid">
+            @if(Model != null)
+            {
+                foreach (DataRow row in Model.Rows)
+                {
+                    <article class="evento-card" aria-labelledby="ev-interclasse">
+                        <div class="evento-badge">Evento</div>
+                        <h3 id="ev-interclasse">@row["Nome_Evento"]</h3>
+                        <p class="evento-data">
+                            @if (@row["Data_Evento"] != DBNull.Value)
+                            {
+                                @Convert.ToDateTime(@row["Data_Evento"]).ToString("dd/MM/yyyy")
+                            }
+                        </p>
+                        <p class="evento-desc">@row["Descricao_Evento"]</p>
+                        <a class="btn-evento" href="#" role="button">Saiba mais</a>
+                    </article>
+                }
+            }
+        </div>
+    </section>
+ </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -1,0 +1,86 @@
+﻿@model EventosViewModel
+
+@{
+    ViewData["Title"] = "Excluir Evento";
+    Layout = "../Shared/_LayoutADM.cshtml";
+}
+
+<div id="meuElemento" class="d-flex">
+    <h2 class="text-center" style="margin-top: 100px; margin-bottom: 100px; color:black">
+        <a class="btn" style="margin-right:270px; color:black" role="button"
+           asp-controller="Eventos"
+           asp-action="Selecionar"><i class="bi bi-arrow-left"></i> Voltar</a>
+
+        EXCLUIR EVENTO
+    </h2>
+</div>
+
+@if (TempData["MsgErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["MsgErro"] &emsp;
+
+        <button type="button"
+                class="fechar-alert btn btn-danger btn-sm"
+                arial-label="Close">
+            X
+        </button>
+    </div>
+}
+
+<div class="text-center">
+    <h3 class="text-danger fw-bolder" style="margin-left:200px; margin-bottom:70px"> Realmente deseja excluir o Evento atual?</h3>
+</div>
+
+
+<form asp-controller="Eventos" asp-action="ExcluirProcessar" method="post">
+
+    <div>
+        <input type="hidden" asp-for="IdEvento" />
+    </div>
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+
+            <label for="NomeEven" class="form-label">Nome do Evento</label>
+            <input type="text" class="form-control" id="NomeEven"
+                   placeholder="Digite o Nome do Evento." asp-for="NomeEvento" readonly>
+            <span asp-validation-for="NomeEvento" class"text-danger"></span>
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+
+            <label for="DesEvento" class="form-label">Descrição do Evento</label>
+            <input type="text" class="form-control" id="DesEvento"
+                   placeholder="Digite a Descrição do Evento." asp-for="DescricaoEvento" readonly>
+
+        </div>
+    </div>
+    <br />
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+            <label for="DtEvento" class="form-label">Data do Evento</label>
+            <input type="date" class="form-control" id="DtEvento"
+                   placeholder="Informe a Data do Evento." asp-for="DataEvento" readonly>
+
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+
+            <label for="HrEvento" class="form-label">Horário do Evento</label>
+            <input type="text" class="form-control" id="HrEvento" maxlength="5"
+                   placeholder="Informe a Hora do Evento." asp-for="HorarioEvento" readonly>
+            <span asp-validation-for="HorarioEvento" class"text-danger"></span>
+        </div>
+    </div>
+
+    <br />
+
+    <br />
+
+    <div class="d-grid gap-6" id="meuElemento">
+        <button style="margin-left:230px; width:500px" type="submit" class="btn btn-danger">Excluir</button>
+        &emsp;
+    </div>
+</form>

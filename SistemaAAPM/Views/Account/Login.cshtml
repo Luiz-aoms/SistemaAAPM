@@ -1,0 +1,43 @@
+﻿@using SistemaAAPM.ViewModels
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="account-container">
+    <div class="account-box">
+        <div></div>
+        <div class="container">
+            <a asp-controller="Home" asp-action="Index" class="text-decoration-none mt-2"> <span class="icon-back text-back"><i class="bi bi-arrow-bar-left"></i> Voltar ao inicio</span> </a>
+
+        </div>
+        <div class="text-center container-logo mt-3">
+            <img src="~/images/logo.jpeg" alt="Logo AAPM" id="Logo-AAPM">
+            <h2 class="text-center mb-2 title-login"> Login</h2>
+        </div>
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="ReturnUrl" />
+
+            <div class="text-danger"></div>
+            <div class="mb-3">
+                <i class="bi bi-envelope"></i><span> <label class="form-label"></label></span>
+                    <label asp-for="UserName"></label>
+                    <input asp-for="UserName" class="form-control" placeholder="Digite seu usuário..." />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 password-container">
+                <i class="bi bi-lock"></i> <label class="form-label"></label><span></span>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" type="password" class="form-control" id="passwordInput" placeholder="Digite sua senha...">
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <span class="password-toggle-icon" id="togglePassword">
+                    <i class="bi bi-eye-slash"></i>
+                </span>
+            </div>
+            <input type="submit" class="btn login-btn" value="Entrar" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model CursoVM
+@{
+    ViewData["Title"] = "Inserir Curso";
+    Layout = "../Shared/_LayoutADM.cshtml";
+}
+
+<div id="meuElemento" class="d-flex">
+    <h2 class="text-center" style="margin-top: 100px; margin-bottom: 100px; color:black">
+        <a class="btn" style="margin-right:270px; color:black" role="button"
+           asp-controller="Curso"
+           asp-action="Selecionar"><i class="bi bi-arrow-left"></i> Voltar</a>
+
+        INSERIR CURSO
+    </h2>
+</div>
+
+<form asp-controller="Curso" asp-action="InserirProcessar" method="post">
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+
+            <label for="nome" class="form-label">Nome Curso</label>
+            <input type="text" class="form-control" id="nome"
+                   placeholder="Digite o nome." asp-for="NomeCursos">
+            <span asp-validation-for="NomeCursos" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+
+            <label for="CPF" class="form-label">Sigla Curso</label>
+            <input type="text" class="form-control" id="CPF"
+                   placeholder="Digite a sigla do curso." asp-for="SiglaCurso">
+
+        </div>
+    </div>
+    <br />
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+            <label for="DtInicio" class="form-label">Data de Início</label>
+            <input type="date" class="form-control" id="DtInicio"
+                   placeholder="Data de Inicio." asp-for="DataInicio">
+
+        </div>
+        <div class="col-md-5" style="margin-left:100px">
+            <label for="DtTermino" class="form-label">Data de Término</label>
+            <input type="date" class="form-control" id="DtTermino"
+                   placeholder="Data de Termino." asp-for="DataTermino">
+
+        </div>
+    </div>
+
+    <br />
+
+
+    <br />
+
+    <<div class="d-grid gap-6" id="meuElemento">
+        <button style="margin-left:230px; width:500px" type="submit" class="btn btn-primary">Inserir</button>
+        &emsp;
+    </div>
+</form>

@@ -1,0 +1,69 @@
+﻿@model SalaVM
+
+@{
+    ViewData["Title"] = "Excluir Sala";
+    Layout = "../Shared/_LayoutADM.cshtml";
+}
+
+<div id="meuElemento" class="d-flex">
+    <h2 class="text-center" style="margin-top: 100px; margin-bottom: 100px; color:black">
+        <a class="btn" style="margin-right:270px; color:black" role="button"
+           asp-controller="Sala"
+           asp-action="Selecionar"><i class="bi bi-arrow-left"></i> Voltar</a>
+
+        EXCLUIR CURSO
+    </h2>
+</div>
+
+@if (TempData["MsgErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["MsgErro"] &emsp;
+
+        <button type="button"
+                class="fechar-alert btn btn-danger btn-sm"
+                arial-label="Close">
+            X
+        </button>
+    </div>
+}
+
+<div class="text-center">
+    <h3 class="text-danger fw-bolder" style="margin-left:200px; margin-bottom:70px"> Realmente deseja excluir a Sala atual?</h3>
+</div>
+
+
+<form asp-controller="Sala" asp-action="ExcluirProcessar" method="post">
+
+    <div>
+        <input type="hidden" asp-for="IdSala" />
+    </div>
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+
+            <label for="nmrSala" class="form-label">N° da Sala</label>
+            <input type="text" class="form-control" id="nmrSala"
+                   placeholder="Digite o Número da Sala." asp-for="NmrSala" readonly>
+            <span asp-validation-for="NmrSala" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+
+            <label for="BcSala" class="form-label">Bloco da Sala</label>
+            <input type="text" class="form-control" id="BcSala"
+                   placeholder="Digite o Bloco da Sala." asp-for="BlocoSala" readonly>
+
+        </div>
+    </div>
+    <br />
+
+    <br />
+
+    <br />
+
+    <div class="d-grid gap-6" id="meuElemento">
+        <button style="margin-left:230px; width:500px" type="submit" class="btn btn-danger">Excluir</button>
+        &emsp;
+    </div>
+</form>

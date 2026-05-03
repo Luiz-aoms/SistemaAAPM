@@ -1,0 +1,105 @@
+﻿@model AssociadoViewModel
+@{
+    ViewData["Title"] = "Alterar Associado";
+    Layout = "../Shared/_LayoutADM.cshtml";
+}
+
+<div id="meuElemento" class="d-flex">
+    <h2 class="text-center" style="margin-top: 100px; margin-bottom: 100px; color:black">
+        <a class="btn" style="margin-right:270px; color:black" role="button"
+           asp-controller="Associado"
+           asp-action="Selecionar"><i class="bi bi-arrow-left"></i> Voltar</a>
+
+        ALTERAR ASSOCIADO
+    </h2>
+</div>
+
+@if (TempData["MsgErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["MsgErro"] &emsp;
+
+        <button type="button"
+                class="fechar-alert btn btn-danger btn-sm"
+                arial-label="Close">
+            X
+        </button>
+    </div>
+}
+
+<form asp-controller="Associado" asp-action="AlterarProcessar" method="post">
+
+    <div>
+        <input type="hidden" asp-for="IdAssociados" />
+    </div>
+
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+
+            <label for="Nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="Nome"
+                   placeholder="Digite o nome." asp-for="Nome">
+            <span asp-validation-for="Nome" class"text-danger"></span>
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="cpf"
+                   placeholder="Digite o CPF." asp-for="Cpf">
+
+        </div>
+    </div>
+    <br />
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+            <label for="Telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="Validade"
+                   placeholder="Informe o Telefone." asp-for="Fone">
+
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+            <label for="IdCurso" class="form-label">Cursos</label>
+            <br />
+            <select class="form-select w-100 h-50" id="IdCurso" asp-for="IdCurso" asp-items="Model.Cursos">
+                <option value="" selected>Selecione o Curso...</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <br />
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+            <label for="SenhaArm" class="form-label">Senha Armário</label>
+            <input type="text" class="form-control" id="SenhaArm"
+                   placeholder="Digite a Senha do Armário." asp-for="SenhaArmario">
+
+        </div>
+        <div class="col-md-5" style="margin-left:100px">
+            <label for="Sala" class="form-label">Salas</label>
+            <br />
+            <select class="form-select w-100 h-50" id="Sala" asp-for="IdSala" asp-items="Model.Salas">
+                <option value="" selected> Selecione a Sala</option>
+            </select>
+
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="d-grid gap-6" id="meuElemento">
+        <button style="margin-left:230px; width:500px" type="submit" class="btn btn-primary">Alterar</button>
+        &emsp;
+    </div>
+</form>
+
+
+
+

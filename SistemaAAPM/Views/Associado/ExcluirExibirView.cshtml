@@ -1,0 +1,109 @@
+﻿@model AssociadoViewModel
+
+@{
+    ViewData["Title"] = "Excluir Associado";
+    Layout = "../Shared/_LayoutADM.cshtml";
+}
+
+<div id="meuElemento" class="d-flex">
+    <h2 class="text-center" style="margin-top: 100px; margin-bottom: 100px; color:black">
+        <a class="btn" style="margin-right:270px; color:black" role="button"
+           asp-controller="Associado"
+           asp-action="Selecionar"><i class="bi bi-arrow-left"></i> Voltar</a>
+
+        EXCLUIR ASSOCIADO
+    </h2>
+</div>
+
+@if (TempData["MsgErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["MsgErro"] &emsp;
+
+        <button type="button"
+                class="fechar-alert btn btn-danger btn-sm"
+                arial-label="Close">
+            X
+        </button>
+    </div>
+}
+
+<div class="text-center">
+    <h3 class="text-danger fw-bolder" style="margin-left:200px; margin-bottom:70px"> Realmente deseja excluir o Associado atual?</h3>
+</div>
+
+
+<form asp-controller="Associado" asp-action="ExcluirProcessar" method="post">
+
+    <div>
+        <input type="hidden" asp-for="IdAssociados" />
+    </div>
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+
+            <label for="Nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome"
+                   placeholder="Digite o nome." asp-for="Nome" readonly>
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+
+            <label for="Cpf" class="form-label">CPF</label>
+            <input type="text" class="form-control" id="Cpf"
+                   placeholder="Digite o CPF." asp-for="Cpf" readonly>
+
+        </div>
+    </div>
+    <br />
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+            <label for="Fone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" id="Fone"
+                   placeholder="Informe Telefone." asp-for="Fone" readonly>
+
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+            <label for="Curso" class="form-label">Curso</label>
+            <br />
+            <select class="form-select col-md-5" id="IdEstoqueBruto" asp-for="IdCurso" asp-items="Model.Cursos" disabled>
+                <option value="" selected>Selecione o Curso...</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <br />
+
+    <div class="row gx-5" id="meuElemento">
+        <div class="col-md-5">
+            <label for="SenhaArmario" class="form-label">Senha Armario</label>
+            <input type="text" class="form-control" id="SenhaArmario"
+                   placeholder="Informe a Senha Armario." asp-for="SenhaArmario" readonly>
+
+        </div>
+
+        <div class="col-md-5" style="margin-left:100px">
+            <label for="Sala" class="form-label">Sala</label>
+            <br />
+            <select class="form-select" id="Sala" asp-for="IdSala" asp-items="Model.Salas" disabled>
+                <option value="" selected>Selecione a Sala...</option>
+            </select>
+
+        </div>
+
+    </div>
+
+    <br />
+
+    <br />
+
+    <div class="d-grid gap-6" id="meuElemento">
+        <button style="margin-left:230px; width:500px" type="submit" class="btn btn-danger">Excluir</button>
+        &emsp;
+    </div>
+</form>
