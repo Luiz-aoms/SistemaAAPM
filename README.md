@@ -41,7 +41,3 @@ Um dos diferenciais técnicos deste projeto é a utilização de ADO.NET puro (c
 3. Execute os scripts SQL de criação das tabelas (`tb_associados`, `tb_curso`, etc.) e das restrições de chaves estrangeiras.
 4. Caso exista um arquivo de script `.sql` na pasta do projeto, execute-o para gerar a estrutura inicial.
 
-### Configuração da Aplicação
-1. Clone este repositório:
-   ```bash
-   git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
