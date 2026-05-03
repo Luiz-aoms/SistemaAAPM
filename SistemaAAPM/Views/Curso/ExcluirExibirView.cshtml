@@ -17,7 +17,7 @@
 
 @if (TempData["MsgErro"] != null)
 {
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger" style="margin-left: 320px; margin-right: 100px" role="alert">
         @TempData["MsgErro"] &emsp;
 
         <button type="button"
@@ -33,7 +33,7 @@
 </div>
 
 
-<form asp-controller="Curso" asp-action="ExcluirProcessar" method="post">
+<form asp-controller="Curso" asp-action="ExcluirProcessar" asp-route-idCurso="@Model.IdCursos" method="post">
 
     <div>
         <input type="hidden" asp-for="IdCursos" />

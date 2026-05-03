@@ -14,7 +14,7 @@
     </h2>
 </div>
 
-<form asp-controller="Curso" asp-action="InserirProcessar" method="post">
+<form asp-controller="Curso" asp-action="InserirProcessar" asp-route-idCurso="@Model.IdCursos" method="post">
 
     <div class="row gx-5" id="meuElemento">
         <div class="col-md-5">

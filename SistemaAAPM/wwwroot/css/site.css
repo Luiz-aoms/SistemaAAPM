@@ -32,14 +32,12 @@ body {
     --muted: #6b7280;
     --border: #e6e9ee;
     --danger: #ef4444;
-    --radius: 10px;
-    --shadow: 0 4px 12px rgba(16,24,40,0.06);
     --padding: 10px;
     --avatar-size: 48px;
     --login-bg: #2e07eb;
     --login-hover: #0151ab;
     --login-active: #005ac1;
-    --text-color: #white;
+    --text-color: white;
     --radius: 12px;
     --shadow: 0 6px 18px rgba(37,99,235,0.25);
 }
@@ -320,7 +318,7 @@ body {
             border-color: var(--senai-red);
         }
 
-.success-message {
+.success-message{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -340,13 +338,13 @@ body {
         pointer-events: all;
     }
 
-    .success-message i {
+    .success-message i{
         font-size: 4rem;
         color: #4caf50;
         margin-bottom: 1rem;
     }
 
-    .success-message p {
+    .success-message p{
         font-size: 1.2rem;
         color: var(--senai-dark);
         margin: 0;

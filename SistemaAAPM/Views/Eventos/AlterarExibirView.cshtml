@@ -28,7 +28,7 @@
     </div>
 }
 
-<form asp-controller="Eventos" asp-action="AlterarProcessar" method="post">
+<form asp-controller="Eventos" asp-action="AlterarProcessar" asp-route-idEvento="@Model.IdEvento" method="post">
 
     <div>
         <input type="hidden" asp-for="IdEvento" />

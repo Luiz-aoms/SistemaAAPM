@@ -33,7 +33,7 @@
 </div>
 
 
-<form asp-controller="Sala" asp-action="ExcluirProcessar" method="post">
+<form asp-controller="Sala" asp-action="ExcluirProcessar" asp-route-idSala="@Model.IdSala" method="post">
 
     <div>
         <input type="hidden" asp-for="IdSala" />
