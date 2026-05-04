@@ -28,16 +28,4 @@ Um dos diferenciais técnicos deste projeto é a utilização de ADO.NET puro (c
 * /ViewModels: Classes de transferência de dados (DTOs) que transportam informações de forma segura entre a View e o Controller.
 * /Views: Páginas da interface de usuário construídas com a sintaxe Razor.
 
-## Como Executar o Projeto Localmente
-
-### Pré-requisitos
-* .NET SDK instalado na máquina.
-* Visual Studio ou Visual Studio Code.
-* SQL Server (LocalDB ou instância dedicada).
-
-### Configuração do Banco de Dados
-1. Abra o seu gerenciador do SQL Server (ex: SQL Server Management Studio).
-2. Crie um banco de dados chamado `BdAAPM`.
-3. Execute os scripts SQL de criação das tabelas (`tb_associados`, `tb_curso`, etc.) e das restrições de chaves estrangeiras.
-4. Caso exista um arquivo de script `.sql` na pasta do projeto, execute-o para gerar a estrutura inicial.
 
